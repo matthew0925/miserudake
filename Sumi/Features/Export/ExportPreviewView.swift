@@ -139,8 +139,16 @@ struct ExportPreviewView: View {
             guard newValue == nil, let action = actionAfterDismiss else { return }
             actionAfterDismiss = nil
             switch action {
-            case .save: saveToPhotos()
-            case .share: shareExportedImage()
+            case .save:
+                saveToPhotos()
+            case .share:
+                // fullScreenCoverのdismissアニメーションが完了する前に別のView
+                // Controllerを提示しようとすると「既に提示中」エラーになることが
+                // あるため、システムの標準的な消去アニメーション時間ぶん待ってから
+                // 共有シートを出す。
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
+                    shareExportedImage()
+                }
             }
         }
     }

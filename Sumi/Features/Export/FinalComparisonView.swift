@@ -47,13 +47,7 @@ struct FinalComparisonView: View {
                                     }
                             }
                             .offset(x: geometry.size.width * sliderPosition - 1.5)
-                            .gesture(
-                                DragGesture()
-                                    .onChanged { value in
-                                        let ratio = value.location.x / geometry.size.width
-                                        sliderPosition = min(max(ratio, 0), 1)
-                                    }
-                            )
+                            .allowsHitTesting(false)
 
                         VStack {
                             Spacer()
@@ -65,6 +59,18 @@ struct FinalComparisonView: View {
                             .padding(10)
                         }
                     }
+                    // ドラッグ判定を細いハンドルではなく画像全体にすることで、
+                    // value.locationがgeometry.size.widthと同じ座標系になり
+                    // 正しい比率を計算できるようにする（狭い当たり判定で
+                    // 操作しづらくなるのも避けられる）。
+                    .contentShape(Rectangle())
+                    .gesture(
+                        DragGesture(minimumDistance: 0)
+                            .onChanged { value in
+                                let ratio = value.location.x / geometry.size.width
+                                sliderPosition = min(max(ratio, 0), 1)
+                            }
+                    )
                 }
                 .padding(.horizontal)
                 .accessibilityElement(children: .ignore)

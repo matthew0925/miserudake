@@ -268,13 +268,16 @@ extension GuidedCameraViewController: AVCaptureVideoDataOutputSampleBufferDelega
 
 extension GuidedCameraViewController: AVCapturePhotoCaptureDelegate {
     func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {
-        isCapturing = false
-        guard error == nil,
-              let data = photo.fileDataRepresentation(),
-              let image = UIImage(data: data) else {
-            onCapture?(nil)
-            return
+        // AVCapturePhotoOutputはこのデリゲートを保証されたスレッドなしで呼び出す
+        // （メインスレッドとは限らない）。onCaptureは最終的にSwiftUIの状態を
+        // 更新するため、必ずメインスレッドへ戻してから呼び出す。
+        let image: UIImage? = {
+            guard error == nil, let data = photo.fileDataRepresentation() else { return nil }
+            return UIImage(data: data)
+        }()
+        DispatchQueue.main.async { [weak self] in
+            self?.isCapturing = false
+            self?.onCapture?(image)
         }
-        onCapture?(image)
     }
 }
