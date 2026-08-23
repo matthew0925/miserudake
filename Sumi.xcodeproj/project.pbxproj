@@ -35,6 +35,7 @@
 		ADCF8656443B148FDD1322D9 /* DetectionServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA1EFFF73098411BB06269B /* DetectionServiceTests.swift */; };
 		B00C03ED6FC330550FCD4AD3 /* ExportFileNamingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE44230A26442CF45683183F /* ExportFileNamingTests.swift */; };
 		B72E4081A3D0BDBE1ADBE04D /* RevenueCat in Frameworks */ = {isa = PBXBuildFile; productRef = 1401B631CB3B8DB4FE30F38D /* RevenueCat */; };
+		BC056F907D61943B6C943F26 /* GuidedCameraViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADAC1259734D6E8D0D99C7D /* GuidedCameraViewTests.swift */; };
 		C22F04C90D0F3727700DCF34 /* SharedContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6C8B1773A52B55ADE5A27F /* SharedContainer.swift */; };
 		C5DCA6B03881F85453C0F6D1 /* DetectionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAA0153406DC1FFE190EB57 /* DetectionService.swift */; };
 		C78397D6BC8B39FFD1343E55 /* PurchaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EE2B7F965CA6F44BFBBE041 /* PurchaseManager.swift */; };
@@ -117,6 +118,7 @@
 		E0E0C7551AFB2BD0E76ACD9D /* RevenueCatConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RevenueCatConfig.swift; sourceTree = "<group>"; };
 		E731CAEFB4517441390BF8E9 /* MaskRegion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaskRegion.swift; sourceTree = "<group>"; };
 		EAA1EFFF73098411BB06269B /* DetectionServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetectionServiceTests.swift; sourceTree = "<group>"; };
+		EADAC1259734D6E8D0D99C7D /* GuidedCameraViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuidedCameraViewTests.swift; sourceTree = "<group>"; };
 		EC6C8B1773A52B55ADE5A27F /* SharedContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedContainer.swift; sourceTree = "<group>"; };
 		EC83246A8859D7E72823D770 /* CameraCaptureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraCaptureView.swift; sourceTree = "<group>"; };
 		EDA06548B2BA2CEE09929A8E /* ExportFileNaming.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportFileNaming.swift; sourceTree = "<group>"; };
@@ -228,6 +230,7 @@
 				EAA1EFFF73098411BB06269B /* DetectionServiceTests.swift */,
 				002E64E21CFFB3AEE1898C93 /* DocumentTypeTests.swift */,
 				CE44230A26442CF45683183F /* ExportFileNamingTests.swift */,
+				EADAC1259734D6E8D0D99C7D /* GuidedCameraViewTests.swift */,
 				5D5E158B5C4B76F7090F45E1 /* ImageMaskingServiceTests.swift */,
 				315A6B69669232212047A6CB /* MaskingFlowTests.swift */,
 			);
@@ -486,6 +489,7 @@
 				ADCF8656443B148FDD1322D9 /* DetectionServiceTests.swift in Sources */,
 				D1A223FB09F22E32948FC478 /* DocumentTypeTests.swift in Sources */,
 				B00C03ED6FC330550FCD4AD3 /* ExportFileNamingTests.swift in Sources */,
+				BC056F907D61943B6C943F26 /* GuidedCameraViewTests.swift in Sources */,
 				63629B5CF0F804E3DFF91F9E /* ImageMaskingServiceTests.swift in Sources */,
 				3324354AF719C59C72CAEF27 /* MaskingFlowTests.swift in Sources */,
 			);

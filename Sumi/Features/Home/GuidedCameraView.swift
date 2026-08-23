@@ -222,7 +222,8 @@ final class GuidedCameraViewController: UIViewController {
 
     /// 四隅の座標から、辺が水平・垂直に近い（傾きが小さい）かどうかを判定する。
     /// 厳密な長方形判定ではなく、あくまで「まっすぐ構えられているか」の目安。
-    private static func isReasonablyStraight(topLeft: CGPoint, topRight: CGPoint, bottomRight: CGPoint, bottomLeft: CGPoint) -> Bool {
+    /// テストから直接検証できるようinternalにしている。
+    static func isReasonablyStraight(topLeft: CGPoint, topRight: CGPoint, bottomRight: CGPoint, bottomLeft: CGPoint) -> Bool {
         func angle(_ a: CGPoint, _ b: CGPoint) -> CGFloat {
             atan2(b.y - a.y, b.x - a.x) * 180 / .pi
         }
